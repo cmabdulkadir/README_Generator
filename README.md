@@ -18,3 +18,6 @@ Pull this repo and run this code in the
 
 Below you will find a link to the live link
 
+installation - npm install
+usage - the steps on how to use my application
+license -none

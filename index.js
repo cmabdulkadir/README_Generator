@@ -4,7 +4,7 @@ const inquirer = require('inquirer');
 
 // const util = require("util")
 
-// const generateMarkdown = require()
+const generateMarkdown = require('./utils/generateMarkdown')
 
 
 // TODO: Create an array of questions for user input
@@ -26,24 +26,44 @@ const questions = [
     message: "What installation are used for your project?",
     name: "installation"
 },
+
+{
+    type: 'list',
+    message: "Which license would you like to have for this project?",
+    name: "license",
+    choices: [
+        "GNU GPLv3",
+        "Mozilla",
+        "MIT",
+        "None"
+    ]
+},
+
+{
+    type: 'input',
+    message: "What is your email?",
+    name: "email"
+},
+{
+    type: 'input',
+    message: "What is your github username",
+    name: "username"
+},
 ];
 
-inquirer.prompt(questions).then((answers) => {
-    var mockupReadMe = `# ${answers.title}
-
-## Description
-
-${answers.description}
-    `;
-
-    fs.writeFileSync('./result/README.md', mockupReadMe);
-})
-
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFileSync(fileName, data);
+    console.log("Generating the README file.... done!");
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then((answers) => {
+        var mockupReadMe = generateMarkdown(answers);
+        writeToFile('./result/README.md', mockupReadMe)
+    })
+}
 
 // Function call to initialize app
 init();
