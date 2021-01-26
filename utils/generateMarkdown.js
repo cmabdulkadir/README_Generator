@@ -6,6 +6,8 @@ function renderLicenseBadge(license) {
     return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](${renderLicenseLink('MIT')})`
   } else if(license === 'Mozilla') {
     return `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)]${renderLicenseLink('Mozilla')})`
+  }else if(license === 'GNU GPLv3'){
+    return `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]${renderLicenseLink('GNU GPLv3')})`
   } else {
     return ''
   }
