@@ -2,8 +2,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
-// const util = require("util")
-
 const generateMarkdown = require('./utils/generateMarkdown')
 
 
@@ -23,13 +21,18 @@ const questions = [
 
 {
     type: 'input',
-    message: "What installation are used for your project?",
+    message: "What does the user need to install to run this application?",
     name: "installation"
+},
+{
+    type: 'input',
+    message: "How is the application used? Give instructions",
+    name: "usage"
 },
 
 {
     type: 'list',
-    message: "Which license would you like to have for this project?",
+    message: "Which license are being used for this project?",
     name: "license",
     choices: [
         "GNU GPLv3",
@@ -37,6 +40,16 @@ const questions = [
         "MIT",
         "None"
     ]
+},
+{
+    type: 'input',
+    message: "Who contributed to the project?",
+    name: "contributing"
+},
+{
+    type: 'input',
+    message: "What commands are needed to test this application?",
+    name: "test"
 },
 
 {
