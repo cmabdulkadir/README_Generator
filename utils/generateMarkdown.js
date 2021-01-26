@@ -20,7 +20,9 @@ function renderLicenseLink(license) {
   if(license === 'MIT') {
     return "https://opensource.org/licenses/MIT";
   } else if (license === 'Mozilla') {
-    return "https://opensource.org/licenses/MPL-2.0"
+    return "https://opensource.org/licenses/MPL-2.0";
+  } else if (license === 'GNU GPLv3'){
+    return "https://www.gnu.org/licenses/gpl-3.0"
   }
   else {
     return ''
@@ -47,10 +49,10 @@ function renderLicenseSection (license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  
-## Table of Contents
-    
-* [Description](#description)
+
+# [Description]
+${data.description}
+# Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
@@ -58,23 +60,19 @@ function generateMarkdown(data) {
 * [Test](#test)
 * [Question](#question)
     
-<hr/>
-
-## Description
-    
-${data.description}
-        
-    
-## Installation
-    
-${data.installation}
-
-${renderLicenseSection(data.license)}
-
-## Questions
-
-Github username: ${data.username}
-Email address: ${data.email}
+ 
+# Installation
+The following necessary dependencies must be installed to run this application, ${data.installation} 
+#Usage
+In order to run this application, ${data.usage}
+#License
+This project is licensed under the ${renderLicenseSection(data.license)} license.
+#Contributing
+Contributors: ${data.contributing}
+#Test
+The following is needed to run the test: ${data.test}
+#Question
+For more detailed information about this repo you can visit my github page (https://github.com/${data.username}/${data.title} or contact me directly at ${data.email}
 
 `;
 }
