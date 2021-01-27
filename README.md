@@ -4,6 +4,8 @@
 
 ReadMe Generator is a command-line application that dynmically generates a professional README.md file from a user's input. It is quick and easy allowing the project creater to devote more time to working on the project. 
 
+![README GENERATOR](./assets/README_GENERATOR.png)
+
 ## Tech Stack
 
 README Generator is built on the following:
@@ -14,10 +16,19 @@ README Generator is built on the following:
 
 Pull this repo and run this code in the terminal
 
+## Installation
+npm/inquirer install
+
+## License
+none
+
+## Usage
+Open intergrated terminal/bash and run node idex.js
+
 ## Information 
 
-Below you will find a link to the live link
+Below you will find a link to my walkthrough recording of the README GENERATOR
 
-installation - npm install
-usage - the steps on how to use my application
-license -none
+https://drive.google.com/file/d/1PgbXC2yLO5jYKo63yGnrfSoH660ZvJ08/view
+
+
