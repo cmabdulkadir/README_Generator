@@ -22,7 +22,7 @@ function renderLicenseLink(license) {
   } else if (license === 'Mozilla') {
     return "https://opensource.org/licenses/MPL-2.0";
   } else if (license === 'GNU GPLv3'){
-    return "https://www.gnu.org/licenses/gpl-3.0"
+    return "https://www.gnu.org/licenses/gpl-3.0";
   }
   else {
     return ''
@@ -35,7 +35,7 @@ function renderLicenseLink(license) {
 function renderLicenseSection (license) {
 
   if(license) {
-    return `## License
+    return `license
   ${license}
   
   ## Badge
@@ -50,29 +50,30 @@ function renderLicenseSection (license) {
 function generateMarkdown(data) {
   return `# ${data.title}
 
-# [Description]
+# Description
 ${data.description}
 # Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
-* [Contributing](#contributing)
+* [Contribution](#contribution)
 * [Test](#test)
 * [Question](#question)
     
  
 # Installation
-The following necessary dependencies must be installed to run this application, ${data.installation} 
-#Usage
-In order to run this application, ${data.usage}
-#License
-This project is licensed under the ${renderLicenseSection(data.license)} license.
-#Contributing
-Contributors: ${data.contributing}
-#Test
+The following necessary dependencies must be installed to run this application: ${data.installation} 
+# Usage
+In order to use this application, ${data.usage}
+# License
+This project is licensed under the ${renderLicenseSection(data.license)}
+# Contribution
+Contributors: ${data.contribution}
+# Test
 The following is needed to run the test: ${data.test}
-#Question
-For more detailed information about this repo you can visit my github page (https://github.com/${data.username}/${data.title} or contact me directly at ${data.email}
+# Question
+For more detailed information about this repo you can visit my github page https://github.com/${data.username} or contact me directly at ${data.email} 
+
 
 `;
 }

@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-
+// const utils = require('util');
 const generateMarkdown = require('./utils/generateMarkdown')
 
 
@@ -44,7 +44,7 @@ const questions = [
 {
     type: 'input',
     message: "Who contributed to the project?",
-    name: "contributing"
+    name: "contribution"
 },
 {
     type: 'input',
