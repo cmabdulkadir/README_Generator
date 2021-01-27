@@ -12,7 +12,7 @@ README Generator is built on the following:
 
 ## Development
 
-Pull this repo and run this code in the 
+Pull this repo and run this code in the terminal
 
 ## Information 
 
